@@ -1,0 +1,18 @@
+{
+  "spareParts" : [
+    {
+        "id": 1,
+        "productId": 1,
+        "partName": "Sparepart1",
+        "price": 34000,
+        "image": "assets/images/SampleImg1.png"
+      },
+      {
+        "id": 2,
+        "productId": 1,
+        "partName": "Sparepart2",
+        "price": 34000,
+        "image": "assets/images/SampleImg2.png"
+      }
+]
+}
