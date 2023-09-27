@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 2px;
+    padding: 2px;
+}
+
+.error-msg{
+    color: indianred;
+    font-size: 18pt;
+}
+
+h1{
+    color: rgb(168, 137, 24);
+    padding: 30px;
+    text-align: center;
+    margin: 10px;
+    background-color: darkslategray;
+}

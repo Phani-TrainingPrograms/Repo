@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <p class="h3 fa-fw-bold text-danger">Add new Employee</p>
+            <pre>{{empObj | json}}</pre>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <form>
+                    <div class="mb-2">
+                        <input type="number" class="form-control" [(ngModel)]="empObj.id" name="id" placeholder="Enter the Id"/>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" class="form-control" [(ngModel)]="empObj.name" name="name" placeholder="Enter the name"/>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" class="form-control" [(ngModel)]="empObj.address" name="address" placeholder="Enter the address"/>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" class="form-control" [(ngModel)]="empObj.emailAddress" name="emailAddress" placeholder="Enter the emailAddress"/>
+                    </div>
+                    <div class="mb-2">
+                        <input type="number" class="form-control" [(ngModel)]="empObj.salary" name="salary" placeholder="Enter the salary"/>
+                    </div>
+                    <div class="mb-2">
+                        <input type="file" class="form-control" [(ngModel)]="empObj.empPic" name="empPic" placeholder="Select the file" (change)="onFileChange($event)"/>
+                    </div>
+                    <div class="mb-2">
+                        <button type="submit" class="btn btn-danger" (click)="onEmpSubmit()">Save Changes</button>
+                        <button type="button" class="btn btn-dark" routerLink="/">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

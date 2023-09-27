@@ -1,0 +1,50 @@
+<h2>Template driven Forms</h2>
+<hr>
+<div class="container">
+    <div class="row m-2">
+        <div class="col-md-6">
+            <form #empForm="ngForm" (ngSubmit)="onSubmit(empForm)">
+                <div>
+                    <label for="id">Enter the ID: </label>
+                    <input class="form-control" type="number" #id="ngModel" name="id" required [(ngModel)]="emp.id">
+                    <p *ngIf="!id.valid && (id?.dirty || id?.touched)">
+                        <span class="error-msg">ID is mandatory</span>
+                    </p>
+                </div>
+                <div>
+                    <label for="name">Enter the name:</label>
+                    <input class="form-control" type="text" #name="ngModel" name="name" required minlength="5" [(ngModel)]="emp.name">
+                    <p *ngIf="!name.valid && (name?.dirty || id?.touched)">
+                        <span *ngIf="name.errors?.['required']" class="error-msg">Name is mandatory</span>
+                        <span *ngIf="name.errors?.['minlength']" class="error-msg">Name should be atleast 5 charecters</span>
+                    </p>
+                </div>
+                <div>
+                    <label for="address">Enter the Address: </label>
+                    <input class="form-control" type="text" #address="ngModel" name="address" required [(ngModel)]="emp.address">
+                    <p *ngIf="!address.valid && (address?.dirty || address?.touched)">
+                        <span class="error-msg">Address is mandatory</span>
+                    </p>
+                </div>
+                <div>
+                    <label for="emailAddress">Enter the Email Address: </label>
+                    <input class="form-control" type="text" #emailAddress="ngModel" name="emailaddress" required email [(ngModel)]="emp.emailAddress">
+                    <p *ngIf="!emailAddress.valid && (emailAddress?.dirty || emailAddress?.touched)">
+                        <span *ngIf="emailAddress.errors?.['required']" class="error-msg">Email Address is mandatory</span>
+                        <span *ngIf="emailAddress.errors?.['email']" class="error-msg">Email Address is not in proper format</span>
+                    </p>
+                </div>
+                <div>
+                    <label for="salary">Enter the Salary: </label>
+                    <input class="form-control" type="text" #salary="ngModel" name="salary" required min="20000" max="75000" [(ngModel)]="emp.salary">
+                    <p *ngIf="!salary.valid && (salary?.dirty || salary?.touched)">
+                        <span class="error-msg">Salary is mandatory</span>
+                    </p>
+                </div>
+                <div>
+                    <button [disabled]="!empForm.valid" type="submit" class="btn btn-warning p-3">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
